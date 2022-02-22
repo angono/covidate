@@ -1,0 +1,23 @@
+{% load static %}
+<footer class="mdl-mini-footer mt-5">
+    <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">
+            <a href="{% url 'blog-list' %}" class="mdl-color-text--white">
+                <img class="mr-2 rounded-circle" height="40" width="40" src="{% static 'blog/logo.jpg' %}">Covidate
+            </a>
+        </div>
+    </div>
+    <div class="mdl-mini-footer__right-section">
+        <ul class="mdl-mini-footer__link-list">
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Terms & Conditions</a>
+            </li>
+            <li>
+                <a href="#">Privacy & Policy</a>
+            </li>
+        </ul>
+    </div>
+</footer>

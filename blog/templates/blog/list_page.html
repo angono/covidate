@@ -1,0 +1,90 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="mdl-grid grid-max-width"> 
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-typography--text-center mdl-js-button mdl-js-ripple-effect text-uppercase p-4">
+        <p class="txt-color h4">New Confirmed</p>
+        <div class="line"></div>
+        <p class="h4">{{globalSummary.NewConfirmed}}</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-typography--text-center mdl-js-button mdl-js-ripple-effect text-uppercase p-4">
+        <p class="txt-color h4">Total Confirmed</p>
+        <div class="line"></div>
+        <p class="h4">{{globalSummary.TotalConfirmed}}</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-typography--text-center mdl-js-button mdl-js-ripple-effect text-uppercase p-4">
+        <p class="txt-color h4">New Deaths</p>
+        <div class="line"></div>
+        <p class="h4">{{globalSummary.NewDeaths}}</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-typography--text-center mdl-js-button mdl-js-ripple-effect text-uppercase p-4">
+        <p class="txt-color h4">Total Deaths</p>
+        <div class="line"></div>
+        <p class="h4">{{globalSummary.TotalDeaths}}</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-typography--text-center mdl-js-button mdl-js-ripple-effect text-uppercase p-4">
+        <p class="txt-color h4">New Recovered</p>
+        <div class="line"></div>
+        <p class="h4">{{globalSummary.NewRecovered}}</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-typography--text-center mdl-js-button mdl-js-ripple-effect text-uppercase p-4">
+        <p class="txt-color h4">Total Recovered</p>
+        <div class="line"></div>
+        <p class="h4">{{globalSummary.TotalRecovered}}</p>
+    </div>
+
+</div>
+
+
+
+<div class="grid-max-width">
+    <div class="txt-color h4 text-uppercase mdl-typography--text-center my-5">
+        List of Countries
+    </div>
+    
+    <div class="table-responsive mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp w-100">
+            <thead class="thead-dark">
+                <tr class="mdl-typography--text-uppercase mdl-typography--text-center mdl-color--grey-600">
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">#No</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">Country</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">Country Code</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">New Confirmed</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">Total Confirmed</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">New Deaths</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">Total Deaths</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">New Recovered</th>
+                    <th scope="col" class="mdl-color-text--white mdl-data-table__cell--non-numeric">Total Recovered</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in countries %}
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">{{forloop.counter}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.Country|title}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.CountryCode}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.NewConfirmed}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.TotalConfirmed}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.NewDeaths}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.TotalDeaths}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.NewRecovered}}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{obj.TotalRecovered}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+           
+
+</div>
+
+
+{% endblock %}
+
+
